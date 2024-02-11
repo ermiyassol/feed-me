@@ -1,0 +1,20 @@
+
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.card {
+  background-image: url('https://img.freepik.com/premium-photo/refugee-due-war-climate-change-global-political-issues-refugee-problem-is-gaining-momentum-hungry-children-migrate-europe-humanitarian-demographic-catastrophe-crisis_887181-1715.jpg');
+  background-size: cover; /* Adjust to your needs */
+  background-position: center; /* Adjust to your needs */
+  background-repeat: no-repeat; /* Adjust to your needs */
+}

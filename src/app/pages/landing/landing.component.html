@@ -1,0 +1,55 @@
+<!-- Navigation Bar -->
+<nav class="bg-white p-4 text-black">
+  <div class="container mx-auto flex justify-between ">
+    <div class="flex space-x-2">
+      <img
+      class="size-8 text-white"
+            src="https://fontawesomeicons.com/lib/svg/donate.svg"
+            alt="logo"
+          />
+        <a href="#" class="text-2xl font-bold text-orange-800">Feed Me</a>
+    </div>
+
+    <div class="space-x-3">
+      <a class="border-2 border-orange-950 text-orange-950 hover:bg-orange-950 hover:text-white py-2 px-4 rounded-full font-semibold" (click)="redirect('register')">Donor Registration </a>
+      <a class="bg-orange-950 hover:bg-orange-900 text-white hover:text-white py-2 px-4 rounded-full" (click)="redirect('login')">Admin Login</a>
+    </div>
+      <!-- Add more navigation links if needed -->
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-gray-800 text-white py-20 image_card">
+  <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-4 text-white">Welcome to Feed Me Portal</h1>
+      <p class="text-lg mb-8">Savoring Compassion, Ending Hunger: Rescuing Surplus, Serving Hope.</p>
+      <a class="bg-orange-950 hover:bg-orange-900 text-white hover:text-white py-2 px-4 rounded-full" (click)="redirect('register')">Register to Donate</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="container mx-auto mt-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <!-- Feature Card 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold mb-4">Inspiration</h2>
+          <p class="text-gray-600">What inspired us to create this project was witnessing the story of Bryan, who was fired from Dunkin' Donuts for selflessly distributing surplus food to the needy. Recognizing the food waste problem in businesses like Dunkin' Donuts, where perfectly good items are discarded daily, we aim to build a platform enabling businesses to safely donate excess food to those in need, fostering a more compassionate and sustainable approach to food distribution.
+          </p>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold mb-4">What it does</h2>
+          <p class="text-gray-600">Our platform serves as a centralized hub for businesses, including restaurants, grocery stores, food courts, and hotels, enabling them to register and provide essential details such as business name, category, pick-up times, location coordinates, and contact person information. Through our website, we offer businesses a streamlined way to contribute surplus food, and from our admin page, we efficiently monitor and coordinate these donations, ensuring a seamless connection between donors and those in need.
+          </p>
+      </div>
+
+      <!-- Feature Card 3 -->
+
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-200 text-gray-700 py-4 text-center">
+  <p>&copy; 2022 Feed Me. All rights reserved.</p>
+</footer>

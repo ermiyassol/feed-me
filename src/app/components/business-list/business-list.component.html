@@ -1,0 +1,35 @@
+<div class="flex justify-center">
+  <h2 class="font-mono text-2xl">Business List</h2>
+</div>
+<div class="flex justify-center -mt-36" *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let column of listOfColumns"
+          [nzSortOrder]="column.sortOrder"
+          [nzSortFn]="column.sortFn"
+          [nzSortDirections]="column.sortDirections"
+          [nzFilterMultiple]="column.filterMultiple!"
+          [nzFilters]="column.listOfFilter!"
+          [nzFilterFn]="column.filterFn!"
+        >
+          {{ column.name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of filterTable.data">
+        <td>{{ data.businessName }}</td>
+        <td>{{ data.businessType }}</td>
+        <td>{{ data.contactPersonName }}</td>
+        <td>{{ data.phoneNumber }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.createdOn }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
