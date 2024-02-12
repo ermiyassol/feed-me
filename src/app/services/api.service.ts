@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'http://zenonymous002.pythonanywhere.com';
+  private baseUrl = 'https://zenonymous002.pythonanywhere.com';
   private mainUrl = 'api/v1/feedme';
   private authUrl = 'auth/users';
 
