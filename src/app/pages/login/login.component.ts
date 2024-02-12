@@ -16,8 +16,8 @@ export class LoginComponent {
     password: FormControl<string>;
     remember: FormControl<boolean>;
   }> = this.fb.group({
-    email: ['john@gmail.com', [Validators.required, Validators.email]],
-    password: ['ILoveDjango', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
     remember: [true]
   });
 
