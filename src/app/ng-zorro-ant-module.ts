@@ -22,7 +22,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-// import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -93,7 +93,7 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
     NzDatePickerModule,
     NzDescriptionsModule,
     NzDividerModule,
-    // NzDrawerModule,
+    NzDrawerModule,
     NzDropDownModule,
     NzEmptyModule,
     NzFormModule,
@@ -145,6 +145,7 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
     // NzPipesModule,
     // NzCodeEditorModule,
     // NzGraphModule
+
   ]
 })
 export class NgZorroAntdModule {

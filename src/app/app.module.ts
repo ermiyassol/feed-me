@@ -21,6 +21,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { LandingComponent } from './pages/landing/landing.component';
 import { SuccessRegistrationComponent } from './pages/success-registration/success-registration.component';
 import { BusinessListComponent } from './components/business-list/business-list.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 registerLocaleData(en);
 
@@ -33,7 +34,8 @@ registerLocaleData(en);
     LoadingSpinnerComponent,
     LandingComponent,
     SuccessRegistrationComponent,
-    BusinessListComponent
+    BusinessListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -30,7 +30,11 @@ export class LoginComponent {
         localStorage.setItem("token", JSON.stringify(response));
         this.validateForm.reset();
             this.mes.create("success", `Successfully Authenticated.`);
-            this.routes.navigate(['/welcome']);
+            if(formData.email?.includes("john")) {
+              this.routes.navigate(['/welcome/business-list']);
+            } else {
+              this.routes.navigate(['/welcome/user-detail']);
+            }
       }, error => { console.log("error - ", error);
       this.mes.create("error", `Wrong email/password, Try again!.`);
       this.validateForm.patchValue({password: ""}); }, () => {

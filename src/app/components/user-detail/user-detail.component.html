@@ -1,0 +1,164 @@
+<div class="flex justify-center items-center card">
+  <div *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+
+
+  <div
+    class=" w-full pb-5 px-10 shadow-sm shadow-slate-400 bg-white rounded-md"
+    *ngIf="!isLoading"
+  >
+    <div >
+      <h1 class="text-center text-2xl font-serif font-semibold my-3">
+        Feed Me Portal Donor Registration
+      </h1>
+      <nz-collapse>
+        <nz-collapse-panel [nzHeader]="'Openings Time'" [nzActive]="false">
+          <p style="margin:0;">
+            Time Changing Panel
+          </p>
+        </nz-collapse-panel>
+    </nz-collapse>
+
+      <form
+        nz-form
+        [formGroup]="validateForm"
+        class="login-form w-full"
+        (ngSubmit)="submitForm()"
+      >
+        <nz-divider nzText="Organization Information"></nz-divider>
+        <nz-row nzGutter="10">
+          <nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your Business Name!">
+                <nz-input-group nzPrefixIcon="user">
+                  <input
+                    type="text"
+                    nz-input
+                    formControlName="businessName"
+                    placeholder="Business Name"
+                  />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </nz-col>
+          <nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please select Organization Type!">
+                <nz-input-group>
+                  <nz-select nz-input formControlName="businessType">
+                    <nz-option nzValue="" nzLabel="--Select Type--"></nz-option>
+                    <nz-option
+                      nzValue="restaurant"
+                      nzLabel="Restaurant"
+                    ></nz-option>
+                    <nz-option nzValue="hotel" nzLabel="Hotels"></nz-option>
+                    <nz-option
+                      nzValue="food court"
+                      nzLabel="Food Courts"
+                    ></nz-option>
+                    <nz-option
+                      nzValue="grocery store"
+                      nzLabel="Grocery Store"
+                    ></nz-option>
+                  </nz-select>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </nz-col>
+        </nz-row>
+        <h3 class="text-center">{{ message }}</h3>
+        <button
+          nz-button
+          [ngClass]="
+            location
+              ? 'login-form-button login-form-margin w-full mb-5'
+              : 'login-form-button login-form-margin bg-red-600 w-full mb-5'
+          "
+          [nzType]="'dashed'"
+          type="button"
+          (click)="asyncGenerateLocation()"
+        >
+          Update Location Details
+        </button>
+        <nz-row nzGutter="10">
+          <nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-control
+                nzErrorTip="Please input your Contact Person Name!"
+              >
+                <nz-input-group nzPrefixIcon="user">
+                  <input
+                    type="text"
+                    nz-input
+                    formControlName="contactPersonName"
+                    placeholder="Contact Person Name"
+                  />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </nz-col>
+          <nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your Phone Number!">
+                <nz-input-group nzPrefixIcon="user">
+                  <input
+                    type="number"
+                    nz-input
+                    formControlName="phoneNumber"
+                    placeholder="Phone Number"
+                  />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </nz-col>
+        </nz-row>
+        <nz-divider nzText="Credential Information"></nz-divider>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your Email Address!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="email"
+                nz-input
+                formControlName="email"
+                placeholder="Email Address"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your Password!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="password"
+                nz-input
+                formControlName="password"
+                placeholder="Password"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your Password Again!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="password"
+                nz-input
+                formControlName="confirmPassword"
+                placeholder="Confirm Password"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button
+          nz-button
+          class="login-form-button login-form-margin w-full"
+          [nzType]="'primary'"
+        >
+          Update Information
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

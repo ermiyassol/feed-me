@@ -29,7 +29,54 @@
         <td>{{ data.phoneNumber }}</td>
         <td>{{ data.email }}</td>
         <td>{{ data.createdOn }}</td>
+        <td>
+          <button>
+            <button
+              nz-button
+              nzType="primary"
+              nzSize="small"
+              (click)="openDetail(data.id)"
+            >
+              <span nz-icon nzType="eye"></span>
+            </button>
+          </button>
+        </td>
       </tr>
     </tbody>
   </nz-table>
 </div>
+
+<!-- drawer -->
+<nz-drawer
+  [nzVisible]="visible"
+  [nzWidth]="640"
+  [nzClosable]="false"
+  (nzOnClose)="close()"
+>
+  <ng-container *nzDrawerContent>
+    <p class="title" style="margin-bottom: 24px">Business Profile</p>
+    <div class="w-full"><iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9050.540001741982!2d38.77475257151508!3d9.01972314922824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1707708034329!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <nz-descriptions [nzColumn]="2" nzTitle="Detail Information">
+      <nz-descriptions-item nzTitle="Business Name" [nzSpan]="1">{{
+        detail.businessName
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Business Type" [nzSpan]="1">{{
+        detail.businessType
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Contact Person" [nzSpan]="1">{{
+        detail.contactPersonName
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Phone Number" [nzSpan]="1">{{
+        detail.phoneNumber
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Email" [nzSpan]="2">
+        {{ detail.email }}
+      </nz-descriptions-item>
+    </nz-descriptions>
+    <nz-divider></nz-divider>
+    <nz-descriptions [nzColumn]="2" nzTitle="Business Closing Time">
+      <!-- list business closing times -->
+    </nz-descriptions>
+    <nz-divider></nz-divider>
+  </ng-container>
+</nz-drawer>

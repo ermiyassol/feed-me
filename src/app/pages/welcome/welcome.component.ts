@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,15 +8,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
   isCollapsed = false;
+  pathName = window.location.pathname;
 
   onLogout = () => {
     localStorage.removeItem("token");
     this.routes.navigate(["../"], {relativeTo: this.route});
   }
 
-  constructor(private routes: Router, private route: ActivatedRoute) { }
+  constructor(private routes: Router, private route: ActivatedRoute,) { }
 
   ngOnInit() {
+
   }
 
 }

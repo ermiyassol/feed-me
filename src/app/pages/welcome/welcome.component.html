@@ -22,19 +22,20 @@
       nz-menu
       nzTheme="dark"
       nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
+
     >
+    <!-- <li nz-menu-item>
+      <span nz-icon nzType="dashboard"></span>
+      <span class="mt-10">Dashboard</span>
+    </li> -->
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Business List</a>
+          <li nz-menu-item nzMatchRouter *ngIf="pathName.includes('business-list')">
+            <a routerLink="/welcome/business-list">Business List</a>
           </li>
-          <!-- <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
+          <li nz-menu-item nzMatchRouter *ngIf="pathName.includes('user-detail')">
+            <a routerLink="/welcome/user-detail">User Detail</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li> -->
         </ul>
       </li>
       <li nz-menu-item nzMatchRouter>
@@ -61,8 +62,8 @@
     </nz-header>
     <nz-content>
       <div class="inner-content">
-        <!-- <router-outlet></router-outlet> -->
-        <app-business-list></app-business-list>
+        <router-outlet></router-outlet>
+        <!-- <app-business-list></app-business-list> -->
       </div>
     </nz-content>
   </nz-layout>

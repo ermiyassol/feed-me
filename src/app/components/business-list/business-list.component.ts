@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import {
   NzTableFilterFn,
   NzTableFilterList,
@@ -96,17 +97,37 @@ export class BusinessListComponent implements OnInit {
     },
   ];
   listOfData: DataItem[] = [];
+  visible = false;
+  detail: DataItem = null!;
+
+  openDetail(id: string): void {
+    const index = this.listOfData.findIndex(item => item.id == id);
+    this.detail = this.listOfData[index];
+    this.visible = true;
+    console.log("DETAIL - ", this.detail);
+  }
+
+  close(): void {
+    this.visible = false;
+  }
 
   ngOnInit(): void {
     this.apiServices.getBusiness().subscribe(
       (response: any) => {
         console.log(response);
-        this.listOfData = response?.data;
+        const index = response.findIndex((itm: DataItem) => itm.latitude == "" && itm.longitude == "");
+        response.splice(index, 1);
+        this.listOfData = response;
       },
       (error) => console.log(error),
       () => (this.isLoading = false)
     );
   }
 
-  constructor(private apiServices: ApiService) {}
+  constructor(
+    private apiServices: ApiService,
+    private routes: Router,
+    private route: ActivatedRoute,
+    private mes: NzMessageService
+  ) {}
 }
